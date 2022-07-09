@@ -1,0 +1,25 @@
+<!-- <h1>MEAN STACK</h1>
+
+<button (click)=" testApi()">TestApi</button> -->
+<div class="container">
+  <div class="row">
+    <div  class="col-5 mt-3  p-3 shadow mx-auto">
+       <h2>Sign up</h2>
+       <hr>
+       <form [formGroup]="userForm" (ngSubmit)="signUp()" action="">
+         <div *ngIf="response" [class]="status ? 'alert alert-success':' alert alert-danger'">
+               {{message}}
+               <p *ngIf="status">Redirecting....</p>
+         </div>
+      <input type="text" class="form-control my-2"  formControlName="lastname"  placeholder="lastname">
+      <input type="text" class="form-control my-2"   formControlName="firstname" placeholder="firstname">
+      <input type="text" class="form-control my-2"   formControlName="username" placeholder="username">
+      <input type="text" class="form-control my-2"   formControlName="email" placeholder="email">
+      <input type="text" class="form-control my-2"   formControlName="password" placeholder="password">
+      <div class="row">
+        <button class="btn btn-block btn-danger" type="submit" (click)="signUp()">signUp</button>
+      </div>
+       </form>
+    </div>
+  </div>
+</div>

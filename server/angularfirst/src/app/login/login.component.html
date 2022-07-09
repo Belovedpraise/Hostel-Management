@@ -1,0 +1,25 @@
+
+<!-- <h1>MEAN STACK</h1>
+
+<button (click)=" testApi()">TestApi</button> -->
+<div class="container">
+  <div class="row">
+    <div  class="col-5 mt-3  p-3 shadow mx-auto">
+       <h2>Sign up</h2>
+       <hr>
+       <div *ngIf="!status && response" class="alert alert-danger">
+        Invalid Credentials
+    </div>
+    <div *ngIf="status && response" class="alert alert-success">
+        Sign in successful... Redirecting to dashboard
+    </div>
+       <form [formGroup]="loginForm" (ngSubmit)="signIn()" action="">
+      <input type="text" class="form-control my-2"   formControlName="Email"  placeholder="Email">
+      <input type="text" class="form-control my-2"   formControlName="password" placeholder="password" >
+      <div class="row">
+        <button class="btn btn-block btn-danger" type="submit" (click)="signIn()">signIn</button>
+      </div>
+       </form>
+    </div>
+  </div>
+</div>

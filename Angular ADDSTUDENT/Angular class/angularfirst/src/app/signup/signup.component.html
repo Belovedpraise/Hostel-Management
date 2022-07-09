@@ -1,0 +1,27 @@
+ <div class="">
+  <div class="row">
+    <div class="col-6 ">
+      <img src="../assets/undraw 3.png" alt="" width="900px">
+    </div>
+    <div  class="col-6" style="margin-top: 50px;">
+       <h2 class="text-info">Sign up</h2>
+       <hr>
+       <form [formGroup]="userForm" (ngSubmit)="signUp()" action="">
+         <div *ngIf="response" [class]="status ? 'alert alert-warning':' alert alert-info'" class=" w-75">
+               {{message}}
+               <p *ngIf="status">Redirecting....</p>
+         </div>
+      <input type="text" class="form-control  w-75"  formControlName="lastname"  placeholder="lastname">
+      <input type="text" class="form-control  w-75 "   formControlName="firstname" placeholder="firstname">
+      <input type="text" class="form-control  w-75 "   formControlName="username" placeholder="username">
+      <input type="text" class="form-control  w-75"   formControlName="email" placeholder="email">
+      <input type="text" class="form-control w-75"   formControlName="password" placeholder="password">
+      <div class="row">
+        <button class="btn  w-75" type="submit" (click)="signUp()">signUp</button>
+      </div>
+      <a class="text-info p-5" [routerLink]="['/login']" routerLinkActive="router-link-active" > Already have an account</a>
+       </form>
+    </div>
+  </div>
+</div>
+

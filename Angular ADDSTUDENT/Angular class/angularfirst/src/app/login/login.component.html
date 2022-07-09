@@ -1,0 +1,29 @@
+<div class="bg-info">
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <img src="../assets/undraw 1.png" alt="" width="500px">
+    </div>
+    <div  class="col-6 bg-info"  style="margin-top: 50px;">
+       <h2 class="text-white">Login</h2>
+       <hr>
+       <div *ngIf="!status && response" class="alert alert-info">
+        Invalid details
+    </div>
+    <div *ngIf="status && response" class="alert alert-success">
+        Sign in successful... Redirecting to Home
+    </div>
+       <form [formGroup]="loginForm" (ngSubmit)="signIn()" action="">
+      <input type="text" class="form-control my-2"   formControlName="Email"  placeholder="Email">
+      <input type="text" class="form-control my-2"   formControlName="password" placeholder="password" >
+      <div class="row">
+        <button class="btn btn-block btn-info" type="submit" (click)="signIn()">signIn</button>
+      </div>
+      <a class="text-white px-5" [routerLink]="['/signup']" routerLinkActive="router-link-active" > Not have an account yet?</a>
+       </form>
+       <a class="text-info px-5" [routerLink]="['/userend']" routerLinkActive="router-link-active" ></a>
+    </div>
+  </div>
+</div>
